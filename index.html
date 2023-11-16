@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Plan Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Meal Plan Generator</h1>
+    <form id="mealPlanForm">
+      <label for="numberOfMeals">Number of Meals:</label>
+      <select id="numberOfMeals" name="numberOfMeals">
+        <option value="2">Two Meals</option>
+        <option value="3">Three Meals</option>
+        <option value="5">Five Meals</option>
+      </select>
+
+      <label for="dietPreference">Diet Preference:</label>
+      <select id="dietPreference" name="dietPreference">
+        <option value="balanced">Balanced</option>
+        <option value="lowCarb">Low-Carb</option>
+        <option value="lowFat">Low-Fat</option>
+      </select>
+
+      <label for="healthSpecification">Health Specification:</label>
+      <select id="healthSpecification" name="healthSpecification">
+        <option value="vegan">Vegan</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="alcoholFree">Alcohol-Free</option>
+        <option value="peanutFree">Peanut-Free</option>
+      </select>
+
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" name="height">
+
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" name="weight">
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age">
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="mealType">Type of Meal:</label>
+      <input type="text" id="mealType" name="mealType">
+
+      <label for="dietaryRestrictions">Dietary Restrictions:</label>
+      <input type="text" id="dietaryRestrictions" name="dietaryRestrictions" placeholder="Separate with commas">
+
+      <button type="button" onclick="generateMealPlan()">Generate Meal Plan</button>
+    </form>
+
+    <div id="loader" class="loader"></div>
+
+    <div id="suggestionCard" class="suggestion-card">
+        <div class="suggestion-content">
+            <span id="suggestionText"></span>
+            <button onclick="closeSuggestionCard()">Close</button>
+        </div>
+    </div>
+
+    <div id="mealPlanTable"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
